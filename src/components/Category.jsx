@@ -1,71 +1,40 @@
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
 import { GiNoodles, GiChopsticks } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
 
 function Category() {
   return (
-    <List>
-      <SLink to={"/cuisine/Italian"}>
-        <FaPizzaSlice />
-        <h4>Italian</h4>
-      </SLink>
-      <SLink to={"/cuisine/American"}>
-        <FaHamburger />
-        <h4>American</h4>
-      </SLink>
-      <SLink to={"/cuisine/Thai"}>
-        <GiNoodles />
-        <h4>Thai</h4>
-      </SLink>
-      <SLink to={"/cuisine/Japanese"}>
-        <GiChopsticks />
-        <h4>Japanese</h4>
-      </SLink>
-    </List>
+    <div className='flex items-center gap-1 sm:gap-5'>
+      <NavLink className="flex gap-2 items-center bg-white p-3 rounded-full brandColor hover:bg-orange-700 hover:text-white" to={"/cuisine/Italian"}>
+        <FaPizzaSlice size={30} />
+        <h4 className='font-bold text-sm md:text-lg'>Italian</h4>
+      </NavLink>
+      <NavLink className="flex gap-2 items-center bg-white p-3 rounded-full brandColor hover:bg-orange-700 hover:text-white" to={"/cuisine/American"}>
+        <FaHamburger size={30} />
+        <h4 className='font-bold text-sm md:text-lg'>American</h4>
+      </NavLink>
+      <NavLink className="flex gap-2 items-center bg-white p-3 rounded-full brandColor hover:bg-orange-700 hover:text-white" to={"/cuisine/Thai"}>
+        <GiNoodles size={30} />
+        <h4 className='font-bold text-sm md:text-lg'>Thai</h4>
+      </NavLink>
+      <NavLink className="flex gap-2 items-center bg-white p-3 rounded-full brandColor hover:bg-orange-700 hover:text-white" to={"/cuisine/Japanese"}>
+        <GiChopsticks size={30} />
+        <h4 className='font-bold text-sm md:text-lg'>Japanese</h4>
+      </NavLink>
+    </div>
   )
 }
 
-const List = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0rem;
-`;
+// &.active{
+//   background: linear-gradient(to right, #f27121, #e94057);
 
-const SLink = styled(NavLink)`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-border-radius: 50%;
-margin-right: 2rem;
-text-decoration: none;
-background: linear-gradient(35deg, #494949, #313131);
-width: 6rem;
-height: 6rem;
-cursor: pointer;
-transform: scale(0.8);
-
-h4{
-  color: white;
-  font-size: 0.8rem;
-}
-svg{
-  color: white;
-  font-size: 1.5rem;
-}
-
-&.active{
-  background: linear-gradient(to right, #f27121, #e94057);
-
-  svg{
-    color: white;
-  }
-  h4{
-    color: white;
-  }
-}
-`;
+//   svg{
+//     color: white;
+//   }
+//   h4{
+//     color: white;
+//   }
+// }
 
 
 

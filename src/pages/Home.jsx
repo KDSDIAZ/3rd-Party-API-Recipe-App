@@ -2,20 +2,15 @@ import Veggie from "../components/Veggie";
 import Popular from "../components/Popular";
 
 import React from 'react'
-import styled from "styled-components";
 
 function Home() {
   return (
-    < Content>
+    <div>
       <Veggie />
       <Popular />
-    </Content>
+    </div>
   )
 }
 
-const Content = styled.div`
-width: auto;
-max-width: 900px;
-`;
 
 export default Home

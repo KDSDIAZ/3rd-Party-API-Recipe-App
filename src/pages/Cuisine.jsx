@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { Link, useParams } from 'react-router-dom'
 
 
@@ -20,39 +19,19 @@ function Cuisine() {
   }, [params.type])
 
   return (
-    <Grid>
+    <div className='flex flex-wrap justify-center items-center gap-2 mt-10'>
       {cuisine.map((item) => {
         return (
-          <Card key={item.id}>
-            <Link to={'/recipe/' + item.id}>
-              <img src={item.image} alt=''></img>
-              <h4>{item.title}</h4>
+          <div key={item.id}>
+            <Link className='m-5' to={'/recipe/' + item.id}>
+              <img className=' rounded-full' src={item.image} alt=''></img>
+              <h4 className='text-white text-center'>{item.title}</h4>
             </Link>
-          </Card>
+          </div>
         );
       })}
-    </Grid>
+    </div >
   )
 }
-
-const Grid = styled.div`
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-grid-gap: 3rem;
-`;
-
-const Card = styled.div`
-img{
-  width: 100%;
-  border-radius: 2rem;
-}
-a{
-  text-decoration: none;
-}
-h4{
-  text-align: center;
-  padding: 1rem;
-}
-`;
 
 export default Cuisine
